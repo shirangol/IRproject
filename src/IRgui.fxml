@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <right>
+      <GridPane alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="7.0" prefWidth="10.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="175.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="235.0" minWidth="10.0" prefWidth="197.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="159.0" minWidth="10.0" prefWidth="108.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="159.0" minWidth="10.0" prefWidth="111.33333333333337" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="89.0" minWidth="0.33333333333337123" prefWidth="0.33333333333337123" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="95.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="115.0" minHeight="10.0" prefHeight="76.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="97.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="97.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="corpusStopWordsPath" promptText="Insert corpus and stopwords path" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <TextField fx:id="postingsDicPath" promptText="Insert posting files and dictionary path" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+            <Label alignment="CENTER" text="Corpus and Stopwords Path" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label alignment="CENTER" text="Posting files and Dictionary path" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Button fx:id="browseDirPostingsDictionary" mnemonicParsing="false" onAction="#BrowseDirCorpusStopwords" prefHeight="8.0" prefWidth="55.0" text="Browse" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+            <Button fx:id="browse2" mnemonicParsing="false" onAction="#browseDirPostingsDictionary" prefHeight="7.0" prefWidth="55.0" text="Browse" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+            <Button fx:id="LoadDictionary" mnemonicParsing="false" onAction="#loadDictionary" text="Load Dictionary" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+            <TextField fx:id="queryTextFiled" alignment="CENTER" prefHeight="44.0" prefWidth="197.0" promptText="Insert query here" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button fx:id="browseQueriesFile" mnemonicParsing="false" onAction="#browseQueriesButton" prefHeight="4.0" prefWidth="102.0" text="Browse from file" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <center>
+                  <Button fx:id="runSearch" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#runSearchButton" prefHeight="34.0" prefWidth="162.0" text="RUN" textAlignment="CENTER" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+               <center>
+                  <Button fx:id="browseQueryResultsPath" mnemonicParsing="false" onAction="#browseQueryResultsPath" text="Browse query results path" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <center>
+                  <Button fx:id="DisplayDictionary" mnemonicParsing="false" onAction="#displayDictionary" text="Display Dictionary" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <center>
+                  <CheckBox fx:id="useSemanticModel" mnemonicParsing="false" onAction="#semanticModelCheckBox" text="Use Semantic Model" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <center>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <center>
+                        <CheckBox mnemonicParsing="false" onAction="#useDataMuseAPI" text="DataMuse API" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </center></BorderPane>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <center>
+                  <CheckBox fx:id="StemmingCheckBox" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#stemmingCheckBox" text="Stemming" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
+               <center>
+                  <Button fx:id="restart" mnemonicParsing="false" onAction="#restart" text="Restart" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <center>
+                  <Label text="Search Query:" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="7">
+               <center>
+                  <Button fx:id="startButton" alignment="CENTER" mnemonicParsing="false" onAction="#startButton" prefHeight="10.0" prefWidth="41.0" text="Start" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+         </children>
+      </GridPane>
+   </right>
+</BorderPane>
